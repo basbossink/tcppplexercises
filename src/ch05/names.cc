@@ -13,6 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
 #include<vector>
 #include<iostream>
 #include<algorithm>
@@ -20,11 +21,10 @@
 
 using namespace std;
 
-
 int main() {
-  vector<int> numbers{ 5, 9, -1, 200, 0 };
-  printVector(numbers);
-  sort(numbers.begin(), numbers.end());
+  vector<string> names{ "Kant", "Plato", "Aristotle", "Kierkegard", "Hume" };
+  printVector(names);
+  sort(names.begin(), names.end());
   cout << endl;
-  printVector(numbers);
+  printVector(names);
 }

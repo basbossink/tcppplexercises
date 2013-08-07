@@ -13,18 +13,34 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#ifndef PRINT_VECTOR_H_DEFINED
+#define PRINT_VECTOR_H_DEFINED
+ 
 #include<vector>
+#include<string>
 #include<iostream>
-#include<algorithm>
-#include "print_vector.h"
+#include<sstream>
 
 using namespace std;
 
 
-int main() {
-  vector<int> numbers{ 5, 9, -1, 200, 0 };
-  printVector(numbers);
-  sort(numbers.begin(), numbers.end());
-  cout << endl;
-  printVector(numbers);
+template <typename T>
+string join(const T& v, const string& delim) {
+    ostringstream s;
+    bool shouldInsertDelimiter = false;
+    for (const auto& i : v) {
+        if (shouldInsertDelimiter) {
+            s << delim;
+        }
+        s << i;
+        shouldInsertDelimiter = true;
+    }
+    return s.str();
 }
+
+template <typename T>
+void printVector(vector<T>& items) {
+  cout << "(" << join(items, ", ") << ")" << endl;
+}
+
+#endif 
