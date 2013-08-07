@@ -20,8 +20,7 @@
 using namespace std;
 
 int main() {
-  ifstream integers;
-  integers.open("integers.txt");
+  ifstream integers("integers.txt");
   vector<int> numbers;
   int integer;
   for(int i=0; i < 300; i++) {

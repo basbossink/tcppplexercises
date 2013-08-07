@@ -19,8 +19,7 @@
 using namespace std;
 
 int main() {
-  ofstream integers;
-  integers.open("integers.txt");
+  ofstream integers("integers.txt");
   for(int i=0; i < 300; i++) {
     integers << i << " ";
   }
