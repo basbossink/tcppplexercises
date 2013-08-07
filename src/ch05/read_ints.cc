@@ -15,14 +15,19 @@
 
 #include<iostream>
 #include<fstream>
+#include "print_vector.h"
 
 using namespace std;
 
 int main() {
-  ofstream integers;
+  ifstream integers;
   integers.open("integers.txt");
+  vector<int> numbers;
+  int integer;
   for(int i=0; i < 300; i++) {
-    integers << i << " ";
+    integers >> integer;
+    numbers.push_back(integer);
   }
   integers.close();
+  printVector(numbers);
 }
