@@ -26,10 +26,9 @@ struct IntervalWriter {
   void operator()() {
     constexpr int OneSecondInMilliSeconds = 1000; 
     for(;;) {
-      if(duration_cast<milliseconds>(high_resolution_clock::now() - lastHelloTime).count() >= OneSecondInMilliSeconds) {
         cout << payLoad << endl;
         lastHelloTime = high_resolution_clock::now();
-      }
+        this_thread::sleep_for(milliseconds(OneSecondInMilliSeconds));
     }
   }
   private:
