@@ -1,18 +1,18 @@
 include ../Makefile
 run: normalDistributionHistogram timedLoop optimizedTimedLoop hello 
-	./normalDistributionHistogram.exe
-	./timedLoop.exe
-	./optimizedTimedLoop.exe
-	./hello.exe
+	./normalDistributionHistogram
+	./timedLoop
+	./optimizedTimedLoop
+	./hello
 
 normalDistributionHistogram: normalDistributionHistogram.cc
-	g++ $(CPPFLAGS) -o normalDistributionHistogram.exe normalDistributionHistogram.cc
+	$(CXX) $(CPPFLAGS) -o normalDistributionHistogram normalDistributionHistogram.cc
 
 timedLoop: timedLoop.cc
-	g++ $(CPPFLAGS) -o timedLoop.exe timedLoop.cc
+	$(CXX) $(CPPFLAGS) -o timedLoop timedLoop.cc
 
 optimizedTimedLoop: timedLoop.cc
-	g++ $(CPPFLAGS) -O3 -o optimizedTimedLoop.exe timedLoop.cc
+	$(CXX) $(CPPFLAGS) -O3 -o optimizedTimedLoop timedLoop.cc
 
 hello: hello.cc
-	g++ $(CPPFLAGS) -o hello.exe hello.cc
+	$(CXX) $(CPPFLAGS) -lpthread -o hello hello.cc

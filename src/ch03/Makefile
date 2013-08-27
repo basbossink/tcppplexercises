@@ -1,14 +1,14 @@
 include ../Makefile
 run: hello write_out read_in
-	./hello.exe
-	./write_out.exe
-	./read_in.exe
+	./hello
+	./write_out
+	./read_in
 
 hello: hello.cpp
-	g++ $(CPPFLAGS) -o hello.exe hello.cpp
+	$(CXX) $(CPPFLAGS) -o hello hello.cpp
 
 read_in: read_in.cpp
-	g++ $(CPPFLAGS) -o read_in read_in.cpp
+	$(CXX) $(CPPFLAGS) -o read_in read_in.cpp
 
 write_out: write_out.cpp
-	g++ $(CPPFLAGS) -o write_out write_out.cpp
+	$(CXX) $(CPPFLAGS) -o write_out write_out.cpp
