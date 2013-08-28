@@ -4,11 +4,11 @@ run: hello write_out read_in
 	./write_out
 	./read_in
 
-hello: hello.cpp
-	$(CXX) $(CPPFLAGS) -o hello hello.cpp
+hello: hello.cc
+	$(CXX) $(CPPFLAGS) -o hello hello.cc
 
-read_in: read_in.cpp
-	$(CXX) $(CPPFLAGS) -o read_in read_in.cpp
+read_in: read_in.cc
+	$(CXX) $(CPPFLAGS) -o read_in read_in.cc
 
-write_out: write_out.cpp
-	$(CXX) $(CPPFLAGS) -o write_out write_out.cpp
+write_out: write_out.cc
+	$(CXX) $(CPPFLAGS) -o write_out write_out.cc
