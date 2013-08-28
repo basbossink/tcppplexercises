@@ -14,5 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 CXX=clang++
 CPPFLAGS=-std=c++11 -Wall -Wextra -Werror -pedantic-errors -Wunused
+OUTPUTDIR=bin
+
 all: run
 
