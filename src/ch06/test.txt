@@ -1,0 +1,1 @@
+This is a test file containing 2 numbers 234234.23 and 12.23.
