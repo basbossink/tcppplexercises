@@ -12,7 +12,10 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-include ../Makefile
+include ../Makefile.inc
+
+all : hello hello2 int_vector read_ints names 
+.PHONY : all clean
 
 run: hello hello2 int_vector
 	./hello
@@ -20,19 +23,23 @@ run: hello hello2 int_vector
 	./int_vector
 
 hello2: hello2.cc person.h
-	$(CXX) $(CPPFLAGS) -o hello2 hello2.cc 
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello2 hello2.cc 
 
 read_ints: read_ints.cc
-	$(CXX) $(CPPFLAGS) -o read_ints read_ints.cc 
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/read_ints read_ints.cc 
 
 write_ints: write_ints.cc
-	$(CXX) $(CPPFLAGS) -o write_ints write_ints.cc 
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/write_ints write_ints.cc 
 
 names: names.cc
-	$(CXX) $(CPPFLAGS) -o names names.cc 
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/names names.cc 
 
 int_vector: int_vector.cc
-	$(CXX) $(CPPFLAGS) -o int_vector int_vector.cc 
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/int_vector int_vector.cc 
 
 hello: hello.cc
-	$(CXX) $(CPPFLAGS) -o hello hello.cc
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello hello.cc
+
+clean : 
+	rm -Rf $(OUTPUTDIR)/* 
+

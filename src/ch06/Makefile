@@ -12,24 +12,33 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-include ../Makefile
-run: normalDistributionHistogram timedLoop optimizedTimedLoop hello 
+include ../Makefile.inc
+
+all : normalDistributionHistogram timedLoop hello regex
+.PHONY : all clean
+
+run : normalDistributionHistogram timedLoop optimizedTimedLoop hello 
 	$(OUTPUTDIR)/normalDistributionHistogram
 	$(OUTPUTDIR)/timedLoop
 	$(OUTPUTDIR)/optimizedTimedLoop
 	$(OUTPUTDIR)/hello
 
-normalDistributionHistogram: normalDistributionHistogram.cc
+normalDistributionHistogram : normalDistributionHistogram.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/normalDistributionHistogram normalDistributionHistogram.cc
 
-timedLoop: timedLoop.cc
+timedLoop : timedLoop.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/timedLoop timedLoop.cc
 
-optimizedTimedLoop: timedLoop.cc
+optimizedTimedLoop : timedLoop.cc
 	$(CXX) $(CPPFLAGS) -O3 -o $(OUTPUTDIR)/optimizedTimedLoop timedLoop.cc
 
-hello: hello.cc
+hello : hello.cc
 	$(CXX) $(CPPFLAGS) -lpthread -o $(OUTPUTDIR)/hello hello.cc
 
-regex: regex.cc
+regex : regex.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/regex regex.cc
+
+clean : 
+	rm -Rf $(OUTPUTDIR)/* 
+
+

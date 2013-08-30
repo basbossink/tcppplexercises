@@ -12,18 +12,9 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-SUBDIRS = ch03 ch05 ch06 ch07
 
-include Makefile.inc
+CXX = clang++
+CPPFLAGS = -std=c++11 -stdlib=libc++ -lc++abi -Wall -Wextra -Werror -pedantic-errors -Wunused
+OUTPUTDIR = bin
 
-all : subdirs
-
-clean : subdirs 
-
-.PHONY : subdirs $(SUBDIRS) clean
-
-subdirs : $(SUBDIRS)
-
-$(SUBDIRS) :
-	$(MAKE) -C $@ $(MAKECMDGOALS)
-
+# vim: set filetype=make :

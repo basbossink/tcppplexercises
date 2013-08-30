@@ -12,17 +12,25 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-include ../Makefile
-run: hello write_out read_in
+include ../Makefile.inc
+
+all : hello read_in write_out
+.PHONY : all clean
+
+run : hello write_out read_in
 	./hello
 	./write_out
 	./read_in
 
-hello: hello.cc
-	$(CXX) $(CPPFLAGS) -o hello hello.cc
+hello : hello.cc
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello hello.cc
 
-read_in: read_in.cc
-	$(CXX) $(CPPFLAGS) -o read_in read_in.cc
+read_in : read_in.cc
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/read_in read_in.cc
 
-write_out: write_out.cc
-	$(CXX) $(CPPFLAGS) -o write_out write_out.cc
+write_out : write_out.cc
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/write_out write_out.cc
+
+clean : 
+	rm -Rf $(OUTPUTDIR)/* 
+
