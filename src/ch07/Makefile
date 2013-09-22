@@ -14,18 +14,25 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
-all : signed_unsigned_chars fundamental_type_sizes
+all : \
+	$(OUTPUTDIR)/signed_unsigned_chars \
+	$(OUTPUTDIR)/fundamental_type_sizes \
+	$(OUTPUTDIR)/print_chars
 .PHONY : all clean
 
-run : signed_unsigned_chars fundamental_type_sizes
+run : all
 	$(OUTPUTDIR)/signed_unsigned_chars
 	$(OUTPUTDIR)/fundamental_type_sizes
+	$(OUTPUTDIR)/print_chars 
 
-fundamental_type_sizes : fundamental_type_sizes.cc
+$(OUTPUTDIR)/fundamental_type_sizes : fundamental_type_sizes.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/fundamental_type_sizes fundamental_type_sizes.cc
 
-signed_unsigned_chars : signed_unsigned_chars.cc
+$(OUTPUTDIR)/signed_unsigned_chars : signed_unsigned_chars.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/signed_unsigned_chars signed_unsigned_chars.cc
+
+$(OUTPUTDIR)/print_chars : print_chars.cc
+	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/print_chars print_chars.cc
 
 clean : 
 	rm -Rf $(OUTPUTDIR)/* 
