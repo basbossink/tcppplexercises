@@ -14,6 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
+CPPFLAGS += $(LDFLAGS)
+
 all : \
 	$(OUTPUTDIR)/hello \
 	$(OUTPUTDIR)/hello2 \

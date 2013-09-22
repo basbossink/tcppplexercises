@@ -12,7 +12,7 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-SUBDIRS = ch03 ch05 ch06 ch07
+SUBDIRS = ch03 ch05 ch06 ch07 ch08
 
 include Makefile.inc
 
