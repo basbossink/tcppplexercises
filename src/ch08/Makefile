@@ -38,7 +38,7 @@ Tests : \
 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(LDFLAGS) $(addprefix $(OUTPUTDIR)/, $^) -o $(OUTPUTDIR)/$@
 
-include ../../lib/gtest-1.6.0/make/Makefile
+include ../TestsMakefile.inc
 
 .PHONY : all clean
 
