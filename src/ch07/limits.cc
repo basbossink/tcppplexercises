@@ -25,6 +25,7 @@ class printMinAndMax {
     void operator()(){
       cout << "The smallest " << typeid(T).name() << " is " << numeric_limits<T>::min() << endl;
       cout << "The largest " << typeid(T).name() << " is " << numeric_limits<T>::max() << endl;
+      cout << "The size of " << typeid(T).name() << " is " << sizeof(T) << " bytes" << endl;
     }
 };
 
