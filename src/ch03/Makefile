@@ -14,21 +14,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
-all : hello read_in write_out
+all : $(OUTPUTDIR)/hello $(OUTPUTDIR)/read_in $(OUTPUTDIR)/write_out
 .PHONY : all clean
 
-run : hello write_out read_in
-	./hello
-	./write_out
-	./read_in
+run : $(OUTPUTDIR)/hello $(OUTPUTDIR)/write_out $(OUTPUTDIR)/read_in
+	$(OUTPUTDIR)/hello
+	$(OUTPUTDIR)/write_out
+	$(OUTPUTDIR)/read_in
 
-hello : hello.cc
+$(OUTPUTDIR)/hello : hello.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello hello.cc
 
-read_in : read_in.cc
+$(OUTPUTDIR)/read_in : read_in.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/read_in read_in.cc
 
-write_out : write_out.cc
+$(OUTPUTDIR)/write_out : write_out.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/write_out write_out.cc
 
 clean : 

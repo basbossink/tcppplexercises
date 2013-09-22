@@ -14,30 +14,35 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
-all : hello hello2 int_vector read_ints names 
+all : \
+	$(OUTPUTDIR)/hello \
+	$(OUTPUTDIR)/hello2 \
+	$(OUTPUTDIR)/int_vector \
+	$(OUTPUTDIR)/read_ints \
+	$(OUTPUTDIR)/names 
 .PHONY : all clean
 
-run: hello hello2 int_vector
-	./hello
-	./hello2
-	./int_vector
+run: $(OUTPUTDIR)/hello $(OUTPUTDIR)/hello2 $(OUTPUTDIR)/int_vector
+	$(OUTPUTDIR)/hello
+	$(OUTPUTDIR)/hello2
+	$(OUTPUTDIR)/int_vector
 
-hello2: hello2.cc person.h
+$(OUTPUTDIR)/hello2: hello2.cc person.h
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello2 hello2.cc 
 
-read_ints: read_ints.cc
+$(OUTPUTDIR)/read_ints: read_ints.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/read_ints read_ints.cc 
 
-write_ints: write_ints.cc
+$(OUTPUTDIR)/write_ints: write_ints.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/write_ints write_ints.cc 
 
-names: names.cc
+$(OUTPUTDIR)/names: names.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/names names.cc 
 
-int_vector: int_vector.cc
+$(OUTPUTDIR)/int_vector: int_vector.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/int_vector int_vector.cc 
 
-hello: hello.cc
+$(OUTPUTDIR)/hello: hello.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello hello.cc
 
 clean : 

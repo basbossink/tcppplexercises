@@ -14,28 +14,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
-all : normalDistributionHistogram timedLoop hello regex
+all : \
+	$(OUTPUTDIR)/normalDistributionHistogram \
+	$(OUTPUTDIR)/timedLoop \
+	$(OUTPUTDIR)/hello \
+	$(OUTPUTDIR)/regex
 .PHONY : all clean
 
-run : normalDistributionHistogram timedLoop optimizedTimedLoop hello 
+run : all
 	$(OUTPUTDIR)/normalDistributionHistogram
 	$(OUTPUTDIR)/timedLoop
 	$(OUTPUTDIR)/optimizedTimedLoop
 	$(OUTPUTDIR)/hello
 
-normalDistributionHistogram : normalDistributionHistogram.cc
+$(OUTPUTDIR)/normalDistributionHistogram : normalDistributionHistogram.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/normalDistributionHistogram normalDistributionHistogram.cc
 
-timedLoop : timedLoop.cc
+$(OUTPUTDIR)/timedLoop : timedLoop.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/timedLoop timedLoop.cc
 
-optimizedTimedLoop : timedLoop.cc
+$(OUTPUTDIR)/optimizedTimedLoop : timedLoop.cc
 	$(CXX) $(CPPFLAGS) -O3 -o $(OUTPUTDIR)/optimizedTimedLoop timedLoop.cc
 
-hello : hello.cc
+$(OUTPUTDIR)/hello : hello.cc
 	$(CXX) $(CPPFLAGS) -lpthread -o $(OUTPUTDIR)/hello hello.cc
 
-regex : regex.cc
+$(OUTPUTDIR)/regex : regex.cc
 	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/regex regex.cc
 
 clean : 
