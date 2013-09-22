@@ -14,12 +14,18 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtest/gtest.h>
+#include <string>
 
 namespace test {
   namespace  {
+    const char str[] = "a short string";
+
     TEST(X_8_8, StringLiteralSize) {
-      char str[] = "a short string";
       ASSERT_EQ(15ul, sizeof(str)/sizeof(char));
+    }
+
+    TEST(X_8_8, StringLiteralLength) {
+      ASSERT_EQ(14ul, std::string(str).size());
     }
   }
 }
