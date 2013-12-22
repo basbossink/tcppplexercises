@@ -30,11 +30,15 @@ swapTest.o : $(TESTDIR)/swapTest.cc \
 stringLiteralSizeTest.o : $(TESTDIR)/stringLiteralSizeTest.cc $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TESTDIR)/stringLiteralSizeTest.cc -o $(OUTPUTDIR)/stringLiteralSizeTest.o
 
+charConversionsTest.o : $(TESTDIR)/charConversionsTest.cc $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TESTDIR)/charConversionsTest.cc -o $(OUTPUTDIR)/charConversionsTest.o
+
 Tests : \
 	gtest_main.a \
 	swap.o \
 	swapTest.o \
 	stringLiteralSizeTest.o \
+	charConversionsTest.o \
 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(LDFLAGS) $(addprefix $(OUTPUTDIR)/, $^) -o $(OUTPUTDIR)/$@
 
