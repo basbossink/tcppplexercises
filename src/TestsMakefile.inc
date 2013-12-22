@@ -1,5 +1,4 @@
-TOP := $(dir $(lastword $(MAKEFILE_LIST)))
-GTEST_DIR = $(TOP)/../lib/gtest-1.6.0
+GTEST_DIR = ../../lib/gtest-1.6.0
 
 # Flags passed to the preprocessor.
 CPPFLAGS += -I$(GTEST_DIR)/include

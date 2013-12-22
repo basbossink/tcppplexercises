@@ -33,12 +33,20 @@ stringLiteralSizeTest.o : $(TESTDIR)/stringLiteralSizeTest.cc $(GTEST_HEADERS)
 charConversionsTest.o : $(TESTDIR)/charConversionsTest.cc $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TESTDIR)/charConversionsTest.cc -o $(OUTPUTDIR)/charConversionsTest.o
 
+countPairsTest.o : $(TESTDIR)/countPairsTest.cc $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TESTDIR)/countPairsTest.cc -o $(OUTPUTDIR)/countPairsTest.o
+
+pairCounter.o : $(SRCDIR)/pairCounter.cc $(SRCDIR)/pairCounter.h
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SRCDIR)/pairCounter.cc -o $(OUTPUTDIR)/pairCounter.o
+
 Tests : \
 	gtest_main.a \
 	swap.o \
 	swapTest.o \
 	stringLiteralSizeTest.o \
 	charConversionsTest.o \
+	countPairsTest.o \
+	pairCounter.o \
 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(LDFLAGS) $(addprefix $(OUTPUTDIR)/, $^) -o $(OUTPUTDIR)/$@
 
