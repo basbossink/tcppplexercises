@@ -1,4 +1,4 @@
-// Copyright (C) 2013 Bas Bossink <bas.bossink@gmail.com>
+// Copyright (C) 2014 Bas Bossink <bas.bossink@gmail.com>
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,35 +12,29 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-#ifndef PRINT_VECTOR_H_DEFINED
-#define PRINT_VECTOR_H_DEFINED
+#ifndef DATE_H_DEFINED
+#define DATE_H_DEFINED
  
-#include<vector>
-#include<string>
-#include<iostream>
-#include<sstream>
+#include <iostream>
+#include <string>
 
-using namespace std;
+namespace X_9_4 {
+  enum class Month {
+    Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec
+  };
 
-
-template <typename T>
-string join(const T& v, const string& delim) {
-    ostringstream s;
-    bool shouldInsertDelimiter = false;
-    for (const auto& i : v) {
-        if (shouldInsertDelimiter) {
-            s << delim;
-        }
-        s << i;
-        shouldInsertDelimiter = true;
-    }
-    return s.str();
-}
-
-template <typename T>
-void printVector(vector<T>& items) {
-  cout << "(" << join(items, ", ") << ")" << endl;
+  struct Date {
+    public:
+      explicit Date(const std::string& dateString);
+      Date() : year(0),day(0),month(Month::Jan) {}
+      int getYear() const { return year; }
+      Month getMonth() const { return month; }
+      int getDay() const { return day; }
+      friend std::istream& operator>>(std::istream &is, Date& inputDate);
+    private:
+      int year,day;
+      Month month;
+  };
 }
 
 #endif 

@@ -20,6 +20,7 @@
 
 namespace tcppplexercises {
   int countPairs(std::string, std::string); 
+  int countPairs(const char*, const char*); 
 }
 
 #endif 

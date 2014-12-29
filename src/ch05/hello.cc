@@ -18,7 +18,7 @@ using namespace std;
 
 int main() {
   cout << "Please tell me your name: ";
-  string name{""};
+  string name("");
   getline(cin, name);
   cout << "Please tell me your age: ";
   int age;

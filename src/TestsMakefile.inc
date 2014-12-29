@@ -1,4 +1,4 @@
-GTEST_DIR = ../../lib/gtest-1.6.0
+GTEST_DIR = ../../../googletest
 
 # Flags passed to the preprocessor.
 CPPFLAGS += -I$(GTEST_DIR)/include

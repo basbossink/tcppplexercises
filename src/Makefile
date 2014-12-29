@@ -12,11 +12,13 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-SUBDIRS = ch03 ch05 ch06 ch07 ch08
+SUBDIRS = ch03 ch05 ch06 ch07 ch08 ch09
 
 include Makefile.inc
 
 all : subdirs
+
+run : subdirs
 
 clean : subdirs 
 
@@ -25,5 +27,5 @@ clean : subdirs
 subdirs : $(SUBDIRS)
 
 $(SUBDIRS) :
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+	$(MAKE) -I /usr/include -C $@ $(MAKECMDGOALS)
 

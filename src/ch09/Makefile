@@ -1,4 +1,4 @@
-# Copyright (C) 2013 Bas Bossink <bas.bossink@gmail.com>
+# Copyright (C) 2014 Bas Bossink <bas.bossink@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,25 +14,35 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 include ../Makefile.inc
 
-CPPFLAGS += $(LDFLAGS)
+TESTDIR = ../../test/ch09
+SRCDIR = ../../src/ch09
 
-all : $(OUTPUTDIR)/hello $(OUTPUTDIR)/read_in $(OUTPUTDIR)/write_out
+all : Tests
+	$(OUTPUTDIR)/Tests
+
+date.o : date.cc date.h 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c date.cc -o $(OUTPUTDIR)/date.o
+
+dateTest.o : $(TESTDIR)/dateTest.cc date.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(SRCDIR) -c $(TESTDIR)/dateTest.cc -o $(OUTPUTDIR)/dateTest.o
+
+$(OUTPUTDIR): 
+	-mkdir -p $(OUTPUTDIR)
+
+Tests : \
+	date.o \
+	dateTest.o \
+	| bin
+
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(LDFLAGS) \
+		../../../googletest/make/gtest_main.a $(addprefix $(OUTPUTDIR)/, $^) \
+		-o $(OUTPUTDIR)/$@
+
+include ../TestsMakefile.inc
+
 .PHONY : all clean
-
-run : $(OUTPUTDIR)/hello $(OUTPUTDIR)/write_out $(OUTPUTDIR)/read_in
-	$(OUTPUTDIR)/hello
-	$(OUTPUTDIR)/write_out
-	$(OUTPUTDIR)/read_in
-
-$(OUTPUTDIR)/hello : hello.cc
-	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/hello hello.cc
-
-$(OUTPUTDIR)/read_in : read_in.cc
-	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/read_in read_in.cc
-
-$(OUTPUTDIR)/write_out : write_out.cc
-	$(CXX) $(CPPFLAGS) -o $(OUTPUTDIR)/write_out write_out.cc
 
 clean : 
 	rm -Rf $(OUTPUTDIR)/* 
+
 

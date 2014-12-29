@@ -14,8 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 CXX = clang++
-LDFLAGS = -lc++abi
-CPPFLAGS = -std=c++11 -stdlib=libc++ -Wall -Wextra -Werror -pedantic-errors -Wunused
+CPPFLAGS = -std=c++11 -Wall -Wextra -Werror -pedantic-errors -Wunused
 OUTPUTDIR = bin
 
 # vim: set filetype=make :
