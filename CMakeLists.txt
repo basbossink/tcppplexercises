@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 project("The C++ Programming Language 4th edition Exercises")
 
-enable_testing()
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
+include(pexpect)
+
+enable_testing()
 
 set(warnings "-Wall -Wextra -Werror -pedantic-errors")
 

@@ -1,7 +1,6 @@
 *.exe
 CMakeFiles/
 Testing/
-bin/
 build/
 Makefile
 CMakeCache.txt
