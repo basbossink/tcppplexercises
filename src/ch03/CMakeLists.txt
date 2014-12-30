@@ -1,6 +1,6 @@
 add_executable(hello hello.cc)
 
-add_test(helloTests hello)
+add_test(helloTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}hello)
 set_tests_properties (helloTests
   PROPERTIES PASS_REGULAR_EXPRESSION "Hello World")
 
@@ -12,6 +12,6 @@ string(CONCAT EXPECTED
   "this is a double: 37.42\n"
   "this is a string: Fred is a happy Flinstone.")
 
-add_test(write-outTests write-out)
+add_test(write-outTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}write-out)
 set_tests_properties(write-outTests
   PROPERTIES PASS_REGULAR_EXPRESSION ${EXPECTED})

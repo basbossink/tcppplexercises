@@ -2,6 +2,7 @@
 CMakeFiles/
 Testing/
 bin/
+build/
 Makefile
 CMakeCache.txt
 CTestTestfile.cmake

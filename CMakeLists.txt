@@ -4,6 +4,7 @@ project("The C++ Programming Language 4th edition Exercises")
 enable_testing()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
+
 set(warnings "-Wall -Wextra -Werror -pedantic-errors")
 
 if (NOT CONFIGURED_ONCE) 
