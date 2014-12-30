@@ -1,3 +1,9 @@
 *.exe
+CMakeFiles/
+Testing/
 bin/
+Makefile
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
 
