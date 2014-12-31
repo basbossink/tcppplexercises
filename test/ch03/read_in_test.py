@@ -1,11 +1,5 @@
 import pexpect
-import os
-from nose.tools import assert_equals
-
-def expect_output(child, output):
-    index = child.expect([output, pexpect.EOF, pexpect.TIMEOUT])
-    assert_equals(index,0, 
-        "unexpected output encountered while waiting for %s" % output)
+from ..helpers.assertions.expect_output import expect_output
 
 def test_read_in():
     child = pexpect.spawnu('./read-in')
@@ -30,5 +24,4 @@ def test_read_in():
     expect_output(child, input_int_string)
     expect_output(child, input_double_string)
     expect_output(child, input_string)
-
 

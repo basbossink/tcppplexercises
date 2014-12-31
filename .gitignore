@@ -2,6 +2,7 @@
 CMakeFiles/
 Testing/
 build/
+__pycache__/
 Makefile
 CMakeCache.txt
 CTestTestfile.cmake
