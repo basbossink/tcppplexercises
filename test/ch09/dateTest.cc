@@ -22,20 +22,29 @@ using namespace X_9_4;
 
 namespace test {
     namespace  {
-        TEST(DateTest , ShouldInitializeFromString) {
-          auto sut = Date("20141228");
+        TEST(DateTest, ShouldInitializeFromString) {
+          Date sut { "20141228" };
           EXPECT_EQ(2014, sut.getYear());
           EXPECT_EQ(Month::Dec, sut.getMonth());
           EXPECT_EQ(28, sut.getDay());
         }
-        TEST(DateTest , ShouldReadFromStream) {
+
+        TEST(DateTest, ShouldReadFromStream) {
           Date sut;
-          auto dateString = "20141228";
-          std::istringstream inputStream(dateString);
+          const std::string dateString { "20141228" };
+          std::istringstream inputStream { dateString };
           inputStream >> sut;
           EXPECT_EQ(2014, sut.getYear());
           EXPECT_EQ(Month::Dec, sut.getMonth());
           EXPECT_EQ(28, sut.getDay());
+        }
+
+        TEST(DateTest, ShouldWriteToStream) {
+          const std::string someDate { "20150101" };
+          const Date sut { someDate };
+          std::ostringstream outputStream;
+          outputStream << sut;
+          EXPECT_EQ(someDate, outputStream.str());
         }
     }
 }

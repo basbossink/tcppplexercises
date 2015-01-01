@@ -12,6 +12,7 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#include <iomanip> 
 #include "date.h"
 
 namespace X_9_4 {
@@ -23,6 +24,7 @@ namespace X_9_4 {
     auto dayPart = dateString.substr(6);
     day = std::stoi(dayPart);
   }
+
   std::istream& operator>>(std::istream& input, Date& dateToFill) {
     std::string dateString;
     input >> dateString;
@@ -31,6 +33,13 @@ namespace X_9_4 {
     dateToFill.month = tempDate.getMonth();
     dateToFill.day = tempDate.getDay();
     return input;
+  }
+
+  std::ostream& operator<<(std::ostream &os, const Date& dateToPrint) {
+    os << dateToPrint.year;
+    os << std::setfill('0') << std::setw(2) << (int)dateToPrint.month;
+    os << std::setfill('0') << std::setw(2) << dateToPrint.day;
+    return os;
   }
 }
 

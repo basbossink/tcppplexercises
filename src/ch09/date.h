@@ -31,6 +31,7 @@ namespace X_9_4 {
       Month getMonth() const { return month; }
       int getDay() const { return day; }
       friend std::istream& operator>>(std::istream &is, Date& inputDate);
+      friend std::ostream& operator<<(std::ostream &os, const Date& dateToPrint);
     private:
       int year,day;
       Month month;
