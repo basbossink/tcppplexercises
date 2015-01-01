@@ -14,7 +14,12 @@ link_directories(${CMAKE_BINARY_DIR}/../src)
 target_link_libraries(unit-tests production gtest_main)
 add_test(unit-tests unit-tests)
 add_custom_command(TARGET unit-tests
-                       POST_BUILD
-                       COMMAND unit-tests
-                       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-                       COMMENT "Running unit-tests" VERBATIM)
+  POST_BUILD
+  COMMAND unit-tests
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+  COMMENT "Running unit-tests" VERBATIM)
+add_custom_target(check
+  COMMAND unit-tests
+  DEPENDS unit-tests
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+  COMMENT "Running unit-tests" VERBATIM)
