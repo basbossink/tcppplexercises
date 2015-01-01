@@ -1,1 +1,1 @@
-add_library(ch08 pairCounter.cc swap.cc)
+add_library(ch08 OBJECT pairCounter.cc swap.cc)
