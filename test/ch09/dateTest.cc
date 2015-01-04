@@ -1,4 +1,4 @@
-// Copyright (C) 2014 Bas Bossink <bas.bossink@gmail.com>
+// Copyright (C) 2015 Bas Bossink <bas.bossink@gmail.com>
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@ using namespace X_9_4;
 namespace test {
     namespace  {
         TEST(DateTest, ShouldInitializeFromString) {
-          Date sut { "20141228" };
-          EXPECT_EQ(2014, sut.getYear());
+          Date sut { "20151228" };
+          EXPECT_EQ(2015, sut.getYear());
           EXPECT_EQ(Month::Dec, sut.getMonth());
           EXPECT_EQ(28, sut.getDay());
         }
 
         TEST(DateTest, ShouldReadFromStream) {
           Date sut;
-          const std::string dateString { "20141228" };
+          const std::string dateString { "20151228" };
           std::istringstream inputStream { dateString };
           inputStream >> sut;
-          EXPECT_EQ(2014, sut.getYear());
+          EXPECT_EQ(2015, sut.getYear());
           EXPECT_EQ(Month::Dec, sut.getMonth());
           EXPECT_EQ(28, sut.getDay());
         }
