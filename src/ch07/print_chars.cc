@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -22,10 +22,10 @@ void printCharacterValue(char c) {
   cout << c << " has integer value in hexadecimal " << hex << (int)c << endl;
 }
 int main() {
-  for(char c = 'a'; c <= 'z'; ++c) {
+  for (char c = 'a'; c <= 'z'; ++c) {
     printCharacterValue(c);
   }
-  for(char c = '0'; c <= '9'; ++c) {
+  for (char c = '0'; c <= '9'; ++c) {
     printCharacterValue(c);
   }
 }

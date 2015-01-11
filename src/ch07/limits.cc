@@ -13,20 +13,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
-#include<limits>
-#include<typeinfo>
+#include <iostream>
+#include <limits>
+#include <typeinfo>
 
 using namespace std;
 
-template<typename T>
+template <typename T>
 class printMinAndMax {
-  public:
-    void operator()(){
-      cout << "The smallest " << typeid(T).name() << " is " << numeric_limits<T>::min() << endl;
-      cout << "The largest " << typeid(T).name() << " is " << numeric_limits<T>::max() << endl;
-      cout << "The size of " << typeid(T).name() << " is " << sizeof(T) << " bytes" << endl;
-    }
+public:
+  void operator()() {
+    cout << "The smallest " << typeid(T).name() << " is "
+         << numeric_limits<T>::min() << endl;
+    cout << "The largest " << typeid(T).name() << " is "
+         << numeric_limits<T>::max() << endl;
+    cout << "The size of " << typeid(T).name() << " is " << sizeof(T)
+         << " bytes" << endl;
+  }
 };
 
 int main() {

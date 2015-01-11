@@ -13,16 +13,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-#include<vector>
-#include<iostream>
-#include<algorithm>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 #include "print_vector.h"
 
 using namespace std;
 
 int main() {
-  vector<string> names{ "Kant", "Plato", "Aristotle", "Kierkegard", "Hume" };
+  vector<string> names{"Kant", "Plato", "Aristotle", "Kierkegard", "Hume"};
   printVector(names);
   sort(names.begin(), names.end());
   cout << endl;

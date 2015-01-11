@@ -14,28 +14,40 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef DATE_H_DEFINED
 #define DATE_H_DEFINED
- 
+
 #include <iostream>
 #include <string>
 
 namespace X_9_4 {
   enum class Month {
-    Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec
+    Jan = 1,
+    Feb,
+    Mar,
+    Apr,
+    May,
+    Jun,
+    Jul,
+    Aug,
+    Sept,
+    Oct,
+    Nov,
+    Dec
   };
 
   struct Date {
-    public:
-      explicit Date(const std::string& dateString);
-      Date() : year(0),day(0),month(Month::Jan) {}
-      int getYear() const { return year; }
-      Month getMonth() const { return month; }
-      int getDay() const { return day; }
-      friend std::istream& operator>>(std::istream &is, Date& inputDate);
-      friend std::ostream& operator<<(std::ostream &os, const Date& dateToPrint);
-    private:
-      int year,day;
-      Month month;
+  public:
+    explicit Date(const std::string& dateString);
+    Date() : year(0), day(0), month(Month::Jan) {}
+    int getYear() const { return year; }
+    Month getMonth() const { return month; }
+    int getDay() const { return day; }
+    friend std::istream& operator>>(std::istream& is, Date& inputDate);
+    friend std::ostream& operator<<(std::ostream& os, const Date& dateToPrint);
+
+  private:
+    int year, day;
+    Month month;
   };
 }
 
-#endif 
+#endif

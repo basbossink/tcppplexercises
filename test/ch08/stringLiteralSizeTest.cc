@@ -17,11 +17,11 @@
 #include <string>
 
 namespace test {
-  namespace  {
+  namespace {
     const char str[] = "a short string";
 
     TEST(X_8_8, StringLiteralSize) {
-      ASSERT_EQ(15ul, sizeof(str)/sizeof(char));
+      ASSERT_EQ(15ul, sizeof(str) / sizeof(char));
     }
 
     TEST(X_8_8, StringLiteralLength) {

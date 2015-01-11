@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -23,7 +23,7 @@ int main() {
   cout << "Please tell me your age: ";
   int age;
   cin >> age;
-  cout << "Hello " << name \
-    << " nice to meet you. You appear quite young for your age " \
-    << age << "." <<endl; 
+  cout << "Hello " << name
+       << " nice to meet you. You appear quite young for your age " << age
+       << "." << endl;
 }

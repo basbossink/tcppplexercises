@@ -24,23 +24,25 @@ using namespace std::chrono;
 struct IntervalWriter {
   IntervalWriter(const string& stringToWrite) : payLoad(stringToWrite) {}
   void operator()() {
-    constexpr int OneSecondInMilliSeconds = 1000; 
-    for(;;) {
-        cout << payLoad << endl;
-        lastHelloTime = high_resolution_clock::now();
-        this_thread::sleep_for(milliseconds(OneSecondInMilliSeconds));
+    constexpr int OneSecondInMilliSeconds = 1000;
+    for (;;) {
+      cout << payLoad << endl;
+      lastHelloTime = high_resolution_clock::now();
+      this_thread::sleep_for(milliseconds(OneSecondInMilliSeconds));
     }
   }
-  private:
-    high_resolution_clock::time_point lastHelloTime = high_resolution_clock::now(); 
-    string payLoad;
+
+private:
+  high_resolution_clock::time_point lastHelloTime =
+    high_resolution_clock::now();
+  string payLoad;
 };
 
 int main() {
-  IntervalWriter helloWriter { "Hello" };
-  IntervalWriter worldWriter { "world!" };
-  thread helloThread { helloWriter };
-  thread worldThread { worldWriter };
+  IntervalWriter helloWriter{"Hello"};
+  IntervalWriter worldWriter{"world!"};
+  thread helloThread{helloWriter};
+  thread worldThread{worldWriter};
   helloThread.join();
   worldThread.join();
 }

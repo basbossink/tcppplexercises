@@ -13,14 +13,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main() {
   ofstream integers("integers.txt");
-  for(int i=0; i < 300; i++) {
+  for (int i = 0; i < 300; i++) {
     integers << i << " ";
   }
   integers.close();

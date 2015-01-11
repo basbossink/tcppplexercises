@@ -20,20 +20,20 @@ using namespace X_8_7;
 
 namespace test {
   namespace {
-    TEST(X_8_7 , SwapUsingPointers) {
-      int fred { 37 };
-      int barney { 42 };
+    TEST(X_8_7, SwapUsingPointers) {
+      int fred{37};
+      int barney{42};
       swap(&fred, &barney);
-      ASSERT_EQ( 42, fred);
-      ASSERT_EQ( 37, barney);
+      ASSERT_EQ(42, fred);
+      ASSERT_EQ(37, barney);
     }
 
-    TEST(X_8_7 , SwapUsingReferences) {
-      int fred { 37 };
-      int barney { 42 };
+    TEST(X_8_7, SwapUsingReferences) {
+      int fred{37};
+      int barney{42};
       swap(fred, barney);
-      ASSERT_EQ( 42, fred);
-      ASSERT_EQ( 37, barney);
+      ASSERT_EQ(42, fred);
+      ASSERT_EQ(37, barney);
     }
   }
 }

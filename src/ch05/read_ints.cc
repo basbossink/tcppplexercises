@@ -13,8 +13,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 #include "print_vector.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ int main() {
   ifstream integers("integers.txt");
   vector<int> numbers;
   int integer;
-  for(int i=0; i < 300; i++) {
+  for (int i = 0; i < 300; i++) {
     integers >> integer;
     numbers.push_back(integer);
   }

@@ -18,8 +18,8 @@
 
 #include <iostream>
 #include <string>
-#include <algorithm> 
-#include <functional> 
+#include <algorithm>
+#include <functional>
 #include <cctype>
 #include <locale>
 
@@ -27,29 +27,33 @@ using namespace std;
 
 namespace tcppplexercises {
   // trim from start
-  static inline std::string &ltrim(std::string &s) {
-    s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+  static inline std::string& ltrim(std::string& s) {
+    s.erase(s.begin(),
+            std::find_if(s.begin(), s.end(),
+                         std::not1(std::ptr_fun<int, int>(std::isspace))));
     return s;
   }
 
   // trim from end
-  static inline std::string &rtrim(std::string &s) {
-    s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+  static inline std::string& rtrim(std::string& s) {
+    s.erase(
+      std::find_if(s.rbegin(), s.rend(),
+                   std::not1(std::ptr_fun<int, int>(std::isspace))).base(),
+      s.end());
     return s;
   }
 
   // trim from both ends
-  static inline std::string &trim(std::string &s) {
-    return ltrim(rtrim(s));
-  }
+  static inline std::string& trim(std::string& s) { return ltrim(rtrim(s)); }
 
   class Person {
-    public: 
-      friend ostream& operator<<(ostream& out, const Person& person);
-      friend istream& operator>>(istream& in, Person& person);
-    private:
-      string name;
-      int age;
+  public:
+    friend ostream& operator<<(ostream& out, const Person& person);
+    friend istream& operator>>(istream& in, Person& person);
+
+  private:
+    string name;
+    int age;
   };
 
   ostream& operator<<(ostream& out, const Person& person) {
@@ -67,4 +71,4 @@ namespace tcppplexercises {
     return in;
   }
 }
-#endif 
+#endif

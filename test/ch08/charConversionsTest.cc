@@ -16,14 +16,14 @@
 #include <gtest/gtest.h>
 
 namespace test {
-  namespace  {
-    void f(char ) {};
-    void h(const char& ) {};
-    template<typename T>
-      void callEm(T c) {
-        f(c);
-        h(c);
-      }
+  namespace {
+    void f(char){};
+    void h(const char&){};
+    template <typename T>
+    void callEm(T c) {
+      f(c);
+      h(c);
+    }
     TEST(X_8_9, CharConversions) {
       callEm('a');
       callEm(49);

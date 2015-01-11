@@ -23,34 +23,36 @@ using namespace std;
 
 string parseCode(regex_constants::error_type type) {
   switch (type) {
-      case regex_constants::error_collate:
-          return "error_collate: invalid collating element request";
-      case regex_constants::error_ctype:
-          return "error_ctype: invalid character class";
-      case regex_constants::error_escape:
-          return "error_escape: invalid escape character or trailing escape";
-      case regex_constants::error_backref:
-          return "error_backref: invalid back reference";
-      case regex_constants::error_brack:
-          return "error_brack: mismatched bracket([ or ])";
-      case regex_constants::error_paren:
-          return "error_paren: mismatched parentheses(( or ))";
-      case regex_constants::error_brace:
-          return "error_brace: mismatched brace({ or })";
-      case regex_constants::error_badbrace:
-          return "error_badbrace: invalid range inside a { }";
-      case regex_constants::error_range:
-          return "erro_range: invalid character range(e.g., [z-a])";
-      case regex_constants::error_space:
-          return "error_space: insufficient memory to handle this regular expression";
-      case regex_constants::error_badrepeat:
-          return "error_badrepeat: a repetition character (*, ?, +, or {) was not preceded by a valid regular expression";
-      case regex_constants::error_complexity:
-          return "error_complexity: the requested match is too complex";
-      case regex_constants::error_stack:
-          return "error_stack: insufficient memory to evaluate a match";
-      default:
-          return "";
+    case regex_constants::error_collate:
+      return "error_collate: invalid collating element request";
+    case regex_constants::error_ctype:
+      return "error_ctype: invalid character class";
+    case regex_constants::error_escape:
+      return "error_escape: invalid escape character or trailing escape";
+    case regex_constants::error_backref:
+      return "error_backref: invalid back reference";
+    case regex_constants::error_brack:
+      return "error_brack: mismatched bracket([ or ])";
+    case regex_constants::error_paren:
+      return "error_paren: mismatched parentheses(( or ))";
+    case regex_constants::error_brace:
+      return "error_brace: mismatched brace({ or })";
+    case regex_constants::error_badbrace:
+      return "error_badbrace: invalid range inside a { }";
+    case regex_constants::error_range:
+      return "erro_range: invalid character range(e.g., [z-a])";
+    case regex_constants::error_space:
+      return "error_space: insufficient memory to handle this regular "
+             "expression";
+    case regex_constants::error_badrepeat:
+      return "error_badrepeat: a repetition character (*, ?, +, or {) was not "
+             "preceded by a valid regular expression";
+    case regex_constants::error_complexity:
+      return "error_complexity: the requested match is too complex";
+    case regex_constants::error_stack:
+      return "error_stack: insufficient memory to evaluate a match";
+    default:
+      return "";
   }
 }
 
@@ -60,21 +62,23 @@ int main(int argc, char* argv[]) {
       cout << "Usage: " << argv[0] << " <filename>" << endl;
       return -1;
     }
-    ifstream file { argv[1] };
-    string content((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
-    regex decimals( R"(\d+(\.\d+)?)" );
+    ifstream file{argv[1]};
+    string content((istreambuf_iterator<char>(file)),
+                   istreambuf_iterator<char>());
+    regex decimals(R"(\d+(\.\d+)?)");
     sregex_token_iterator end{};
-    for(sregex_token_iterator p(content.begin(), content.end(),decimals); p != end; ++p) {
+    for (sregex_token_iterator p(content.begin(), content.end(), decimals);
+         p != end; ++p) {
       cout << "found decimal: " << *p << endl;
     }
-  } catch(const regex_error& rex) {
+  } catch (const regex_error& rex) {
     cerr << "Caught exception " << rex.what() << endl;
     cerr << parseCode(rex.code()) << endl;
-  }catch(const exception& ex) {
+  } catch (const exception& ex) {
     cerr << "Caught exception " << ex.what() << endl;
   } catch (const string& ex) {
     cerr << "Caught exception " << ex << endl;
   } catch (...) {
     cerr << "Caught unknown exepcetion" << endl;
-  } 
+  }
 }

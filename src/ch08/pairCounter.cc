@@ -22,9 +22,10 @@ namespace tcppplexercises {
   int countPairs(std::string pair, std::string searchString) {
     int returnValue = 0;
     auto start = searchString.begin();
-    while((start = std::find(start, searchString.end(), pair[0])) != searchString.end()) {
-      auto next = start+1;
-      if(*next == pair[1]) {
+    while ((start = std::find(start, searchString.end(), pair[0])) !=
+           searchString.end()) {
+      auto next = start + 1;
+      if (*next == pair[1]) {
         returnValue++;
       }
       start++;
@@ -35,9 +36,9 @@ namespace tcppplexercises {
   int countPairs(const char* pair, const char* searchString) {
     int returnValue = 0;
     auto start = searchString;
-    auto end = start+strlen(searchString)+1;
-    while((start = std::find(start, end, pair[0])) != end) {
-      if(*(++start) == pair[1]) {
+    auto end = start + strlen(searchString) + 1;
+    while ((start = std::find(start, end, pair[0])) != end) {
+      if (*(++start) == pair[1]) {
         returnValue++;
       }
     }

@@ -21,30 +21,30 @@
 using namespace X_9_4;
 
 namespace test {
-    namespace  {
-        TEST(DateTest, ShouldInitializeFromString) {
-          Date sut { "20151228" };
-          EXPECT_EQ(2015, sut.getYear());
-          EXPECT_EQ(Month::Dec, sut.getMonth());
-          EXPECT_EQ(28, sut.getDay());
-        }
-
-        TEST(DateTest, ShouldReadFromStream) {
-          Date sut;
-          const std::string dateString { "20151228" };
-          std::istringstream inputStream { dateString };
-          inputStream >> sut;
-          EXPECT_EQ(2015, sut.getYear());
-          EXPECT_EQ(Month::Dec, sut.getMonth());
-          EXPECT_EQ(28, sut.getDay());
-        }
-
-        TEST(DateTest, ShouldWriteToStream) {
-          const std::string someDate { "20150101" };
-          const Date sut { someDate };
-          std::ostringstream outputStream;
-          outputStream << sut;
-          EXPECT_EQ(someDate, outputStream.str());
-        }
+  namespace {
+    TEST(DateTest, ShouldInitializeFromString) {
+      Date sut{"20151228"};
+      EXPECT_EQ(2015, sut.getYear());
+      EXPECT_EQ(Month::Dec, sut.getMonth());
+      EXPECT_EQ(28, sut.getDay());
     }
+
+    TEST(DateTest, ShouldReadFromStream) {
+      Date sut;
+      const std::string dateString{"20151228"};
+      std::istringstream inputStream{dateString};
+      inputStream >> sut;
+      EXPECT_EQ(2015, sut.getYear());
+      EXPECT_EQ(Month::Dec, sut.getMonth());
+      EXPECT_EQ(28, sut.getDay());
+    }
+
+    TEST(DateTest, ShouldWriteToStream) {
+      const std::string someDate{"20150101"};
+      const Date sut{someDate};
+      std::ostringstream outputStream;
+      outputStream << sut;
+      EXPECT_EQ(someDate, outputStream.str());
+    }
+  }
 }

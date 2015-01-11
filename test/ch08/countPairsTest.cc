@@ -21,56 +21,56 @@ using namespace std;
 using namespace tcppplexercises;
 
 namespace test {
-  namespace  {
+  namespace {
     TEST(X_8_12, PairCounterTestSimple) {
-      string testString{ "xabaacbaxabb" };
-      string pair{ "ab" };
-      ASSERT_EQ(2, countPairs(pair, testString));      
+      string testString{"xabaacbaxabb"};
+      string pair{"ab"};
+      ASSERT_EQ(2, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestSimpleSingle) {
-      string testString{ "xaba" };
-      string pair{ "ab" };
-      ASSERT_EQ(1, countPairs(pair, testString));      
+      string testString{"xaba"};
+      string pair{"ab"};
+      ASSERT_EQ(1, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestSimpleNone) {
-      string testString{ "xaca" };
-      string pair{ "ab" };
-      ASSERT_EQ(0, countPairs(pair, testString));      
+      string testString{"xaca"};
+      string pair{"ab"};
+      ASSERT_EQ(0, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestEmptyString) {
-      string testString{ "" };
-      string pair{ "ab" };
-      ASSERT_EQ(0, countPairs(pair, testString));      
+      string testString{""};
+      string pair{"ab"};
+      ASSERT_EQ(0, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestThree) {
-      string testString{ "iabbaabioabaeueo" };
-      string pair{ "ab" };
-      ASSERT_EQ(3, countPairs(pair, testString));      
+      string testString{"iabbaabioabaeueo"};
+      string pair{"ab"};
+      ASSERT_EQ(3, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestCStringSimple) {
-      const char* testString{ "xabaacbaxabb" };
-      const char* pair{ "ab" };
-      ASSERT_EQ(2, countPairs(pair, testString));      
+      const char* testString{"xabaacbaxabb"};
+      const char* pair{"ab"};
+      ASSERT_EQ(2, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestSimpleSingleCString) {
-      const char* testString{ "xaba" };
-      const char* pair{ "ab" };
-      ASSERT_EQ(1, countPairs(pair, testString));      
+      const char* testString{"xaba"};
+      const char* pair{"ab"};
+      ASSERT_EQ(1, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestSimpleNoneCString) {
-      const char* testString{ "xaca" };
-      const char* pair{ "ab" };
-      ASSERT_EQ(0, countPairs(pair, testString));      
+      const char* testString{"xaca"};
+      const char* pair{"ab"};
+      ASSERT_EQ(0, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestEmptyStringCString) {
-      const char* testString{ "" };
-      const char* pair{ "ab" };
-      ASSERT_EQ(0, countPairs(pair, testString));      
+      const char* testString{""};
+      const char* pair{"ab"};
+      ASSERT_EQ(0, countPairs(pair, testString));
     }
     TEST(X_8_12, PairCounterTestThreeCString) {
-      const char* testString{ "iabbaabioabaeueo" };
-      const char* pair{ "ab" };
-      ASSERT_EQ(3, countPairs(pair, testString));      
+      const char* testString{"iabbaabioabaeueo"};
+      const char* pair{"ab"};
+      ASSERT_EQ(3, countPairs(pair, testString));
     }
   }
 }

@@ -12,14 +12,14 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#include <iomanip> 
+#include <iomanip>
 #include "date.h"
 
 namespace X_9_4 {
-  Date::Date(const std::string &dateString) {
+  Date::Date(const std::string& dateString) {
     auto yearPart = dateString.substr(0, 4);
     year = std::stoi(yearPart);
-    auto monthPart = dateString.substr(4,2);
+    auto monthPart = dateString.substr(4, 2);
     month = static_cast<Month>(std::stoi(monthPart));
     auto dayPart = dateString.substr(6);
     day = std::stoi(dayPart);
@@ -35,11 +35,10 @@ namespace X_9_4 {
     return input;
   }
 
-  std::ostream& operator<<(std::ostream &os, const Date& dateToPrint) {
+  std::ostream& operator<<(std::ostream& os, const Date& dateToPrint) {
     os << dateToPrint.year;
     os << std::setfill('0') << std::setw(2) << (int)dateToPrint.month;
     os << std::setfill('0') << std::setw(2) << dateToPrint.day;
     return os;
   }
 }
-

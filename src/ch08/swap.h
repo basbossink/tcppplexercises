@@ -15,10 +15,10 @@
 
 #ifndef SWAP_H_DEFINED
 #define SWAP_H_DEFINED
- 
+
 namespace X_8_7 {
-  void swap(int*,int*);
+  void swap(int*, int*);
   void swap(int&, int&);
 }
 
-#endif 
+#endif

@@ -12,9 +12,7 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
-  cout << "Hello World!" << endl;
-}
+int main() { cout << "Hello World!" << endl; }

@@ -13,8 +13,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 #include "person.h"
 
 using namespace std;
@@ -23,12 +23,13 @@ using namespace tcppplexercises;
 int main() {
   vector<Person> persons;
   Person p;
-  while(cin >> p) {
+  while (cin >> p) {
     persons.push_back(p);
   }
   cout << endl << "You entered the following person(s): " << endl;
-  for(auto p : persons) {
+  for (auto p : persons) {
     cout << p << endl;
   }
-  cout << "Total number of persons entered: " << persons.size() << " person(s)." << endl;
+  cout << "Total number of persons entered: " << persons.size() << " person(s)."
+       << endl;
 }

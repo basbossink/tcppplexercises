@@ -13,16 +13,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<vector>
-#include<iostream>
-#include<algorithm>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 #include "print_vector.h"
 
 using namespace std;
 
-
 int main() {
-  vector<int> numbers{ 5, 9, -1, 200, 0 };
+  vector<int> numbers{5, 9, -1, 200, 0};
   printVector(numbers);
   sort(numbers.begin(), numbers.end());
   cout << endl;

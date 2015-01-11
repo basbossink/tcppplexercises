@@ -12,13 +12,13 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
   cout << "type a bool: ";
-  bool answer = false; 
+  bool answer = false;
   cin >> boolalpha >> answer;
   cout << "type a char: ";
   char answer2 = 0;
@@ -31,7 +31,7 @@ int main() {
   cin >> answer4;
   cout << "type a string: ";
   string answer5 = "";
-  cin.ignore(256,'\n');
+  cin.ignore(256, '\n');
   getline(cin, answer5);
   cout << endl << "Your answers were:" << endl;
   cout << boolalpha << answer << endl;

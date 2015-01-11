@@ -13,17 +13,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 int main() {
   char c = 0xff;
   int i = c;
-  if(i == -1) {
+  if (i == -1) {
     cout << "char is signed" << endl;
   }
-  if(i == 255) {
+  if (i == 255) {
     cout << "char is unsigned" << endl;
   }
 }

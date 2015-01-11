@@ -13,29 +13,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-#define PRINT_SIZE(type) cout << "The size of " << #type << " is " << sizeof(type) << endl;
+#define PRINT_SIZE(type) \
+  cout << "The size of " << #type << " is " << sizeof(type) << endl;
 
 enum class Flinstone { Fred, Barney, Wilma, Betty, Rubbles, Dino };
 
-enum class Grades { shodan, nidan, sandan, rokudan, yondan};
+enum class Grades { shodan, nidan, sandan, rokudan, yondan };
 
 int main() {
-  PRINT_SIZE(bool)  
-  PRINT_SIZE(char)  
-  PRINT_SIZE(short)  
-  PRINT_SIZE(int)  
-  PRINT_SIZE(long)  
-  PRINT_SIZE(long long)  
-  PRINT_SIZE(float)  
-  PRINT_SIZE(double)  
-  PRINT_SIZE(long double)  
-  PRINT_SIZE(int*)  
-  PRINT_SIZE(double*)  
-  PRINT_SIZE(Grades*)  
-  PRINT_SIZE(Flinstone)  
-  PRINT_SIZE(Grades)  
+  PRINT_SIZE(bool)
+  PRINT_SIZE(char)
+  PRINT_SIZE(short)
+  PRINT_SIZE(int)
+  PRINT_SIZE(long)
+  PRINT_SIZE(long long)
+  PRINT_SIZE(float)
+  PRINT_SIZE(double)
+  PRINT_SIZE(long double)
+  PRINT_SIZE(int*)
+  PRINT_SIZE(double*)
+  PRINT_SIZE(Grades*)
+  PRINT_SIZE(Flinstone)
+  PRINT_SIZE(Grades)
 }

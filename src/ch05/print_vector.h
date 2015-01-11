@@ -15,27 +15,26 @@
 
 #ifndef PRINT_VECTOR_H_DEFINED
 #define PRINT_VECTOR_H_DEFINED
- 
-#include<vector>
-#include<string>
-#include<iostream>
-#include<sstream>
+
+#include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
-
 template <typename T>
 string join(const T& v, const string& delim) {
-    ostringstream s;
-    bool shouldInsertDelimiter = false;
-    for (const auto& i : v) {
-        if (shouldInsertDelimiter) {
-            s << delim;
-        }
-        s << i;
-        shouldInsertDelimiter = true;
+  ostringstream s;
+  bool shouldInsertDelimiter = false;
+  for (const auto& i : v) {
+    if (shouldInsertDelimiter) {
+      s << delim;
     }
-    return s.str();
+    s << i;
+    shouldInsertDelimiter = true;
+  }
+  return s.str();
 }
 
 template <typename T>
@@ -43,4 +42,4 @@ void printVector(vector<T>& items) {
   cout << "(" << join(items, ", ") << ")" << endl;
 }
 
-#endif 
+#endif
