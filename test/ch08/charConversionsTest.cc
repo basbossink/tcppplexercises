@@ -17,8 +17,8 @@
 
 namespace test {
   namespace {
-    void f(char){};
-    void h(const char&){};
+    void f(char){}
+    void h(const char&){}
     template <typename T>
     void callEm(T c) {
       f(c);
