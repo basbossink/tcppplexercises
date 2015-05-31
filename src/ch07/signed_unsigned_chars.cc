@@ -22,7 +22,7 @@ int main() {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Woverflow"
   char c = 0xff;
-#pragma GCC diagnostic pop  
+#pragma GCC diagnostic pop
 
   int i = c;
   if (i == -1) {
