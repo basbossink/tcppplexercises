@@ -14,6 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 add_executable(hello3 hello.cc)
+target_link_libraries(hello3 Threads::Threads)
 
 add_executable(histogram normalDistributionHistogram.cc)
 add_test(histogramTest histogram)

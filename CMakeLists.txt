@@ -19,6 +19,7 @@ project("The C++ Programming Language 4th edition Exercises")
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
 
 include(pexpect)
+find_package(Threads REQUIRED)
 find_package(PythonInterp REQUIRED)
 find_program(nosetests NOSETESTS_EXECUTABLE REQUIRED)
 
