@@ -7,4 +7,10 @@ Makefile
 CMakeCache.txt
 CTestTestfile.cmake
 cmake_install.cmake
-
+build.ninja
+rules.ninja
+.ninja_deps
+.ninja_log
+gtest/
+*.a
+*.o
