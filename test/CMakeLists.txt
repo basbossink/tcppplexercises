@@ -13,14 +13,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set(GTEST_DIR "../../googletest"
+set(GTEST_DIR "/usr/include/gtest"
     CACHE PATH "The path to the Google test framework.")
-include_directories(SYSTEM ${GTEST_DIR}/gtest/include
-                           ${GTEST_DIR}/include)
+include_directories(SYSTEM ${GTEST_DIR})
 add_subdirectory(ch08)
 add_subdirectory(ch09)
 
-add_subdirectory(${GTEST_DIR} ${CMAKE_BINARY_DIR}/gtest)
+add_subdirectory(/usr/src/gtest ${CMAKE_BINARY_DIR}/gtest)
 set_property(TARGET gtest APPEND_STRING PROPERTY COMPILE_FLAGS " -w")
 
 add_executable(unit-tests $<TARGET_OBJECTS:ch08-test> 

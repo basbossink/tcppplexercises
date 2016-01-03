@@ -14,4 +14,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 include_directories(../../src/ch09)
-add_library(ch09-test OBJECT dateTest.cc)
+file(GLOB tests "*.cc")
+add_library(ch09-test OBJECT ${tests})
