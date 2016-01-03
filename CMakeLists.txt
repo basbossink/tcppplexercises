@@ -25,7 +25,7 @@ find_program(nosetests NOSETESTS_EXECUTABLE REQUIRED)
 
 enable_testing()
 
-set(flags "-std=c++11 -Wall -Wextra -Werror -Wunused -pedantic-errors")
+set(flags "-std=c++14 -Wall -Wextra -Werror -Wunused -pedantic-errors")
 if (NOT CONFIGURED_ONCE) 
   set(CMAKE_CXX_FLAGS "${flags}"
     CACHE STRING "Flags used by the compiler during all build types." FORCE)
